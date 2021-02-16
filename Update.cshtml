@@ -1,0 +1,64 @@
+﻿@using BlogApp.Models
+@model Blog
+@{
+    Layout = "~/Views/Shared/navbar.cshtml";
+
+
+}
+
+<html>
+
+<head>
+
+
+    <link href="~/css/site.css" rel="stylesheet" />
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+
+
+<body style=" background-image: url('../../images/back.jpg');">
+
+
+
+    <center>
+        <div class="text-center border border-dark w-50 p-3">
+
+            <h1 style="color: #0000A0;"> Update your Post.. </h1>
+
+
+            <form method="post" asp-action="Update">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="container-fluid w-50 ">
+                    <label class="col-form-label" style="color:whitesmoke" asp-for="Title"></label><br>
+                    <input class="form-control" asp-for="Title"><br>
+                    <span asp-validation-for="Title"></span>
+
+                </div>
+
+                <div class="container-fluid w-75">
+                    <label class="col-form-label" style="color:whitesmoke" asp-for="Context"></label><br>
+                    <textarea class="form-control h-50 " asp-for="Context"></textarea><br>
+                    <span asp-validation-for="Context"></span>
+
+                </div>
+
+                <button class="btn btn-primary" type="submit">Update</button>
+            </form>
+
+        </div>
+
+
+    </center>
+
+
+</body>
+
+
+
+
+
+
+
+
+</html>

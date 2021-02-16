@@ -1,0 +1,64 @@
+﻿@model List<BlogApp.Models.Blog>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <div class="text-center">
+
+
+        <h1 style="color:white; background-color:black;"> Admin Panel    </h1>
+        <h2 style="color:black"> All Posts </h2>
+
+        <a class="btn btn-primary pd-1021" asp-controller="User" asp-action="CreatePost">Create Post</a>
+    </div>
+
+
+<table class="table table-dark table-striped">
+
+    <thead>
+
+
+        <tr>
+
+            <th>Title</th>
+            <th>Context</th>
+            <th></th>
+
+
+
+
+        </tr>
+
+
+
+
+    </thead>
+
+    <tbody>
+
+        @foreach (BlogApp.Models.Blog b in Model)
+        {
+            <tr>
+
+                <td>@b.Title</td>
+                <td>@b.Context</td>
+                <td>
+
+                    <a class="btn btn-info" asp-controller="User" asp-action="Detail" asp-route-id="@b.Id">Detail</a>
+                    
+
+
+                </td>
+
+
+
+            </tr>
+
+        }
+
+
+
+    </tbody>
+
+
+</table>
+<center>
+    <a class="btn btn-primary" asp-controller="User" asp-action="Login">Logout</a>
+</center>

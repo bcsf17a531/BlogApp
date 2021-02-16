@@ -1,0 +1,39 @@
+﻿@model BlogApp.Models.Blog
+
+<div>
+
+    @{
+        Layout = "~/Views/Shared/navbar.cshtml";
+
+    }
+</div>
+<html>
+
+<head>
+
+    
+</head>
+
+<body style=" background-image: url('../../images/front.jpg');">
+    <center>
+        <div class="card w-50 mt-3" style="width: 18rem; background-color:#696969;">
+            <img class="img-thumbnail img-responsive img-circle" style=" max-width: 130px; max-height: 130px; min-height: 130px; min-width: 130px;">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Title</h5>
+                <p class="card-text">@Model.Context</p>
+                @if (@Model.refrence==1)
+                {
+                    <a class="btn btn-dark" asp-controller="Blog" asp-action="Update" asp-route-id="@Model.Id">Update</a>
+                    <a class="btn btn-danger" asp-controller="Blog" asp-action="Remove" asp-route-id="@Model.Id">Remove</a>
+
+                }
+                
+            </div>
+
+        </div>
+    </center>
+
+
+</body>
+
+</html>

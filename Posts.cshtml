@@ -1,0 +1,49 @@
+﻿<div>
+    @RenderBody()
+</div>
+
+@model List<BlogApp.Models.Blog>
+<div>
+
+    @{
+        Layout = "~/Views/Shared/navbar.cshtml";
+
+    }
+</div>
+<html>
+
+<head>
+
+
+</head>
+
+<body style=" background-image: url('../../images/front.jpg');">
+
+
+    <div class="text-center">
+        <a class="btn btn-primary pd-1021" asp-controller="Blog" asp-action="Post">Add Post</a>
+
+
+
+    </div>
+    <center>
+        @foreach (BlogApp.Models.Blog b in Model)
+        {
+
+            <div class="card w-50 mt-3" style="width: 18rem; background-color:#696969;">
+                <img class="img-thumbnail img-responsive img-circle" style=" max-width: 130px; max-height: 130px; min-height: 130px; min-width: 130px;">
+                <div class="card-body">
+                    <h5 class="card-title">@b.Title</h5>
+                    <p class="card-text">@b.Context</p>
+                    <a class="btn btn-primary" asp-controller="Blog" asp-action="Detail" asp-route-id="@b.Id">Detail</a>
+                </div>
+            </div>
+
+
+
+
+        }
+    </center>
+</body>
+
+</html>

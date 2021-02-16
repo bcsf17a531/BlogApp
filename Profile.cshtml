@@ -1,0 +1,8 @@
+﻿@model BlogApp.Models.Users
+
+
+<a asp-controller="User" asp-action="UserProfile" asp-route-id="@Model.Id" >My Profile</a>
+
+<div>
+    @RenderBody()
+</div>

@@ -1,0 +1,29 @@
+﻿@model BlogApp.Models.Blog
+
+<html>
+
+<head>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+</head>
+
+<body style=" background-image: url('../../images/front.jpg');">
+    <center>
+        <div class="card w-50 mt-3" style="width: 18rem; background-color:#696969;">
+            <img class="img-thumbnail img-responsive img-circle" style=" max-width: 130px; max-height: 130px; min-height: 130px; min-width: 130px;">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Title</h5>
+                <p class="card-text">@Model.Context</p>
+                
+                    <a class="btn btn-dark" asp-controller="User" asp-action="PostUpdate" asp-route-id="@Model.Id">Update</a>
+                    <a class="btn btn-danger" asp-controller="User" asp-action="PostRemove" asp-route-id="@Model.Id">Remove</a>
+                
+            </div>
+
+        </div>
+    </center>
+
+
+</body>
+
+</html>

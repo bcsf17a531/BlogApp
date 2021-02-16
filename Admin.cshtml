@@ -1,0 +1,62 @@
+﻿@model List<BlogApp.Models.Users>
+
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<center>
+
+    <h1 style="color:white; background-color:black;"> Admin Panel    </h1>
+    <h2 style="color:black"> Users </h2>
+</center>
+
+  
+
+<table class="table table-dark table-striped">
+
+    <thead>
+
+
+        <tr>
+
+            <th>Names</th>
+            <th>Emails</th>
+            <th>Passwords</th>
+
+
+
+
+        </tr>
+
+
+
+
+    </thead>
+
+    <tbody>
+
+        @foreach (BlogApp.Models.Users c in Model)
+        {
+        <tr>
+
+            <th>@c.RegisterUsername</th>
+            <th>@c.RegisterEmail</th>
+            <th>@c.RegisterPassword</th>
+            <th><a class="btn btn-primary" asp-controller="User" asp-action="Update" asp-route-id="@c.Id">Update</a></th>
+            <th><a class="btn btn-danger" asp-controller="User" asp-action="Remove" asp-route-id="@c.Id">Remove</a></th>
+
+
+        </tr>
+
+        }
+
+
+
+    </tbody>
+
+
+
+</table>
+<center>
+    <a class="btn btn-primary" asp-controller="User" asp-action="UpdatPosts">See Posts</a>
+</center>

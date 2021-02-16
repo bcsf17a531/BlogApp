@@ -1,0 +1,71 @@
+﻿@using BlogApp.Models
+@model Users
+
+
+
+<html>
+
+<head>
+
+
+    <link href="~/css/site.css" rel="stylesheet" />
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+
+
+<body style=" background-image: url('../../images/back.jpg');">
+
+
+    <div class="card w-25 mt-3" style="width: 8rem; background-color:#696969;">
+        
+        <div class="card-body">
+            <h5 class="card-title">Note: To Login As Admin</h5>
+            <p class="card-text">Email:  admin@admin.com</p>
+            <p class="card-text">Password:  admin</p>
+            
+        </div>
+    </div>
+
+    <center>
+        <div class="text-center border border-dark w-50 p-3">
+
+            <h1 style="color: #0000A0;"> SignIn </h1>
+
+
+            <form method="post" asp-action="Login">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="container-fluid w-50 ">
+                    <label class="col-form-label" style="color:whitesmoke" asp-for="RegisterEmail"></label><br>
+                    <input class="form-control" asp-for="RegisterEmail"><br>
+                    <span asp-validation-for="RegisterEmail"></span>
+
+                </div>
+
+                <div class="container-fluid w-50">
+                    <label class="col-form-label" style="color:whitesmoke" asp-for="RegisterPassword"></label><br>
+                    <input class="form-control" asp-for="RegisterPassword"><br>
+                    <span asp-validation-for="RegisterPassword"></span>
+
+                </div>
+
+                <button class="btn btn-primary" type="submit">Login!</button>
+            </form>
+            <p style="color:whitesmoke">Dont Have an Account?</p>
+            <a asp-controller="User" asp-action="Register">Create an account</a>
+        </div>
+
+
+    </center>
+
+
+</body>
+
+
+
+
+
+
+
+
+</html>
